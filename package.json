@@ -1,0 +1,19 @@
+{
+  "name": "gitolink-v2",
+  "version": "1.0.0",
+  "description": "GitoLink - Your personal link hub",
+  "scripts": {
+    "install:all": "cd server && npm install && cd ../client && npm install",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "build": "cd client && npm run build",
+    "start": "cd server && npm start",
+    "db:generate": "cd server && npx prisma generate",
+    "db:migrate": "cd server && npx prisma migrate dev",
+    "db:deploy": "cd server && npx prisma migrate deploy"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
