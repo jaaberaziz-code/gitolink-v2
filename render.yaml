@@ -1,11 +1,10 @@
-services:
-  # PostgreSQL Database
-  - type: pserv
-    name: gitolink-db
-    runtime: postgres
+databases:
+  - name: gitolink-db
+    databaseName: gitolink
+    user: gitolink
     plan: free
-    ipAllowList: []
 
+services:
   # Express API Server
   - type: web
     name: gitolink-api
@@ -45,4 +44,4 @@ services:
           name: gitolink-api
           property: host
       - key: NEXT_PUBLIC_API_URL
-        value: ""
+        value: "https://gitolink-api.onrender.com"
